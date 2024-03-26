@@ -37,10 +37,27 @@
         const btnUndo = document.getElementById('btnUndo')
         const tituloEncabezado = document.getElementById('encabezado')
         const inputEncabezado = document.getElementById('inputEncabezado')
-
+        var contadorTitulos = 0;
+        var encabezadoAnterior = '';
         function modificarEncabezado() {
             /* Tu código aquí */
+            const nuevoEncabezado = inputEncabezado.value.trim();
+            if (nuevoEncabezado === '') {
+                alert('Ingresa un encabezado, este no puede ir vacio');
+            } else {
+                encabezadoAnterior = tituloEncabezado.textContent;
+                tituloEncabezado.textContent = nuevoEncabezado;
+                contadorTitulos++;
+                if (contadorTitulos >= 2) {
+                    //btnUndo.removeAttribute;
+                    btnUndo.disabled = false;
+                }
+            }
         }
+
+        btnUndo.addEventListener('click', function() {
+            tituloEncabezado.textContent = encabezadoAnterior;
+        });
     </script>
 </body>
 
