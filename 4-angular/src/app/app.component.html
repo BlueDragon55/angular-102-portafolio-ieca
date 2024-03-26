@@ -88,7 +88,7 @@
                         <strong>{{ persona }}</strong>
                         <!-- EJERCICIO 01 -->
                         <!-- Agregar funcionalidad para eliminar el nombre de la persona de la lista utilizando el span con ❌ -->
-                        <span> ❌ </span>
+                        <span (click)="eliminarPersona(persona)"> ❌ </span>
                     </div>
                 </li>
 
@@ -162,7 +162,7 @@
             <button [disabled]="registroForm.invalid" type="submit">Registrar</button>
             <!-- EJERCICIO 03 -->
             <!-- * Habilitar botón para limpiar información -->
-            <button>Limpiar</button>
+            <button (click)="limpiarRegistro()">Limpiar</button>
         </form>
     </div>
 
@@ -176,6 +176,7 @@
                 </a>
                 <!-- EJERCICIO 04 -->
                 <!-- * Agregar la imagen del pokemon por medio del endpoint que se encuentra en miPokemon.url -->
+                <img src="{{miPokemon.sprites.front_default}}" alt="{{miPokemon.name}}">
             </div>
         </div>
     </div>

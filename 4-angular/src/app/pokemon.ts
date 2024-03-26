@@ -1,5 +1,11 @@
 export interface Pokemon {
     name: string,
     url: string,
-    edad?: number // edad es opcional gracias a ?
-}
+    edad?: number, // puede ser opcional gracias a ?
+    sprites: Sprites
+  }
+  
+  export interface Sprites{
+    front_default: string;
+  }
+  

@@ -59,12 +59,21 @@ export class AppComponent implements OnInit {
     this.persona.nombre = ''
   }
 
+  eliminarPersona(persona:any){
+    this.listaPersonas.splice(this.listaPersonas.indexOf(persona), 1);
+  }
+
   contarOveja() {
     this.contadorOvejas += 1;
   }
 
   handlerRegistro() {
     console.log(this.registroInputs)
+  }
+
+  limpiarRegistro(){
+    this.registroInputs.email='';
+    this.registroInputs.passkey=''
   }
 
   ngOnInit(): void {
